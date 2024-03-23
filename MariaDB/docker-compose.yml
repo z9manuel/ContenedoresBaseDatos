@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  mariadb:
+    container_name: MariaDB
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password_aqui
+      MYSQL_DATABASE: local
+      MYSQL_USER: usuario_aqui
+      MYSQL_PASSWORD: password_aqui
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mariadb_data:/var/lib/mysql
+
+volumes:
+  mariadb_data:
+
